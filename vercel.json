@@ -1,11 +1,11 @@
 {
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.*\\.mp3)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "*"
+          "value": "https://stop-neurodeception.web.app"
         }
       ]
     }
