@@ -2,9 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const srcDir = path.join(__dirname, 'public');
-const outDir = path.join(__dirname, '.vercel', 'output');
+const outDir = path.join(__dirname, '.vercel', 'output', 'static');
 
-// Рекурсивная функция копирования директорий
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
 
@@ -20,7 +19,6 @@ function copyDir(src, dest) {
   });
 }
 
-// Сканируем все папки в public (жанры)
 fs.readdirSync(srcDir, { withFileTypes: true }).forEach(entry => {
   if (entry.isDirectory()) {
     const genre = entry.name;
@@ -28,7 +26,7 @@ fs.readdirSync(srcDir, { withFileTypes: true }).forEach(entry => {
     const outGenreDir = path.join(outDir, genre);
 
     copyDir(srcGenreDir, outGenreDir);
-    console.log(`Файлы из ${genre} скопированы в .vercel/output/${genre}`);
+    console.log(`Файлы из ${genre} скопированы в .vercel/output/static/${genre}`);
   }
 });
 
