@@ -1,0 +1,7 @@
+{
+  "name": "masound",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mkdir -p .vercel/output/relax && cp -r public/relax/* .vercel/output/relax/"
+  }
+}
