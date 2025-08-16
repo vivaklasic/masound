@@ -13,3 +13,4 @@ fs.readdirSync(srcDir).forEach(file => {
 });
 
 console.log('MP3 files copied to .vercel/output/relax');
+
